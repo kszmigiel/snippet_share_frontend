@@ -1,47 +1,23 @@
 <template>
   <div id="app">
     <md-toolbar class="md-primary">
-        <h1 class="md-title">SnippetShare</h1>
+        <h1 class="md-title"><router-link to="/">SnippetShare</router-link></h1>
     </md-toolbar>
- 
-    <div v-for="(snippet, $index) in snippets" :key="$index">
-    	<md-content>
-    		<snippet></snippet>
-    	</md-content>
-    </div>
-    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
 
-    <!--</md-content>-->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Snippet from './components/Snippet.vue'
-import InfiniteLoading from 'vue-infinite-loading';
-
 export default {
-  name: 'app',
-  components: {
-    Snippet, InfiniteLoading
-  },
-  data() {
-  	return {
-  		page: 1,
-  		snippets: [1,2,3]
-  	}
-  },
-  methods: {
-  	infiniteHandler ($state) {
-  		this.page += 1;
-  		this.snippets.push(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
-  		$state.loaded();
-  		$state.complete();
-  	}
-  }
+  name: 'app'
 }
 </script>
 
 <style>
+.md-title a {
+  color: white!important;
+}
 .md-content {
   padding: 16px;
   display: flex;
