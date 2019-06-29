@@ -15,7 +15,8 @@
     "vue-code-highlight": "^0.7.1",
     "vue-infinite-loading": "^2.4.4",
     "vue-material": "^1.0.0-beta-11",
-    "vue-router": "^3.0.6"
+    "vue-router": "^3.0.6",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
